@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<h1>Lucky numbers page</h1>
+
+
+<a href="{{ path('home_index') }}">home page</a>
+
+<a href="{{ path('product_index') }}">product page</a>
+
+
+
+<h2>Your lucky number is {{ number }}</h2>
+
+
+
+{% endblock %}
