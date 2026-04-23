@@ -5,6 +5,10 @@
 
 <h1>Products page</h1>
 
+{% for product in products %}
+    <h1>{{ product.name }}</h1>
+{% endfor %}   
+
 <a href="{{ path('home_index') }}">home page</a>
 <a href="{{ path('lucky_index') }}">lucky page</a>
 

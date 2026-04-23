@@ -9,3 +9,7 @@
 
 controllers:
     resource: routing.controllers
+
+product_index:
+    path: /product
+    controller: App\Controller\ProductController::index
