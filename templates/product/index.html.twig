@@ -3,14 +3,37 @@
 
 {% block body %}
 
-<h1>Products page</h1>
-
-{% for product in products %}
-    <h1>{{ product.name }}</h1>
-{% endfor %}   
 
 <a href="{{ path('home_index') }}">home page</a>
 <a href="{{ path('lucky_index') }}">lucky page</a>
+<a href="{{ path('product_create') }}">create product</a>
+
+
+
+<h1>Products page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for product in products %}
+        <tr>
+        <a href="{{ path('product_show', {'id': product.id}) }}">
+            <td>{{ product.name }}</td>
+        </a>
+            <td>{{ product.price }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.description }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+ </table>
 
 
 
