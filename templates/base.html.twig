@@ -19,6 +19,16 @@
         {% endif %}
     </head>
     <body>
+
+    {% for message in app.flashes('notice') %}
+        <div class="notice">
+        {{ message }}
+        </div>
+    {% endfor %}
+
+
+
+
         {% block body %}
                 
         

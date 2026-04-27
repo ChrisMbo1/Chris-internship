@@ -3,11 +3,13 @@
 
 {% block body %}
 
-
-<a href="{{ path('home_index') }}">home page</a>
-<a href="{{ path('lucky_index') }}">lucky page</a>
-<a href="{{ path('product_create') }}">create product</a>
-
+<div>
+    <nav>
+        <a href="{{ path('home_index') }}">home page</a>
+        <a href="{{ path('lucky_index') }}">lucky page</a>
+        <a href="{{ path('product_create') }}">create product</a>
+    </nav>
+</div>
 
 
 <h1>Products page</h1>
@@ -19,6 +21,7 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>description</th>
+            <th>Edit/Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +33,9 @@
             <td>{{ product.price }}</td>
             <td>{{ product.quantity }}</td>
             <td>{{ product.description }}</td>
+            <td><a href="{{ path('product_edit', {'id': product.id}) }}">Edit</a>
+            <a href="{{ path('product_delete', {'id': product.id}) }}">Delete</a>
+            </td>
         </tr>
     {% endfor %}
     </tbody>
